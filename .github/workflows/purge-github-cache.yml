@@ -1,0 +1,14 @@
+name: Purge Github Camo cache
+
+on:
+  schedule:
+    - cron: '0 0 1 * *'  # Runs monthly on 1st at 00:00 UTC
+  workflow_dispatch:     # Also allows manual triggering
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Purge
+        uses: kevincobain2000/action-camo-purge@v1
